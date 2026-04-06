@@ -12,4 +12,5 @@ If you want to run the code in this project, please follow these steps:
    In a terminal or command line, navigate to the directory where the file is located, and then execute the following command:
    ```bash
    tsc
+   ```
    Then open index.html in the browser to use.
