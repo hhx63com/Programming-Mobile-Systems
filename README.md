@@ -7,7 +7,7 @@ If you want to run the code in this project, please follow these steps:
    - `index.html`
    - `style.css`
    - `main.js`
-   - 1main.ts`
+   - `main.ts`
    - `tsconfig.json`
 
 2. **Running code**  
