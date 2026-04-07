@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>Item Search</h2>
+  
+  <div *ngIf="message" class="message" [class.error]="isError">{{ message }}</div>
+  
+  <div class="search-section">
+    <h3>Search by Item Name</h3>
+    <div class="search-form">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Enter item name to search">
+      <button class="btn btn-primary" (click)="searchItems()">Search</button>
+      <button class="btn btn-secondary" (click)="clearSearch()">Clear Search</button>
+      <button class="btn btn-info" (click)="displayAllItems()">Display All Items</button>
+      <button class="btn btn-success" (click)="displayPopularItems()">Display Popular Items</button>
+    </div>
+  </div>
+  
+  <div class="results-section">
+    <h3>Search Results</h3>
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Supplier</th>
+          <th>Stock Status</th>
+          <th>Popular Item</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredItems">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price.toFixed(2) }}</td>
+          <td>{{ item.supplier }}</td>
+          <td>{{ item.stockStatus }}</td>
+          <td>{{ item.popularItem }}</td>
+          <td>{{ item.comment || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
